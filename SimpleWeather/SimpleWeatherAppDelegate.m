@@ -7,6 +7,8 @@
 //
 
 #import "SimpleWeatherAppDelegate.h"
+#import "SimpleWeatherUIViewController.h"
+#import <TSMessage.h>
 
 @implementation SimpleWeatherAppDelegate
 
@@ -15,7 +17,10 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
+    self.window.rootViewController = [[SimpleWeatherUIViewController alloc] init];
     [self.window makeKeyAndVisible];
+    [TSMessage setDefaultViewController:self.window.rootViewController];
+    
     return YES;
 }
 
